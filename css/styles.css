@@ -1,0 +1,110 @@
+
+html {
+    position: relative;
+    min-height: 100%;   
+}
+
+body {
+    background-color: #000;
+    background: radial-gradient(circle at bottom, rgba(2, 2, 132,0.7) 0, rgba(0, 0, 0, 0.7) 100%),    
+    url("https://images.unsplash.com/photo-1572894729549-751acb120367?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=791&q=80") !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: 70% 70% !important;
+    background-attachment: fixed !important;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* NAVBAR */
+
+.navbar {
+    background: rgba(183, 180, 180, 0.6);    
+}
+
+.navbar-brand {
+    text-decoration: none;
+    color:#7d179c;
+    margin-left: 8%;   
+}
+
+.navbar-brand:hover {
+    color: #8a599a;
+}
+
+#main-title {    
+    color: antiquewhite;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 52px;
+    font-weight: bold;
+}
+
+#small-text {   
+    margin-top: 10vh;
+    font-size: 36px;
+    font-family: 'Montserrat', sans-serif;
+    color: antiquewhite;
+}
+
+h5 {
+    color: #fff;        
+}
+
+.light {
+    font-weight: 200;
+}
+
+.timer {      
+    margin-right: 10px;
+  }
+
+.timer-title {
+    color: #89489c;        
+    font-size: 82px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+#expired {
+    font-size: 36px;
+    color: antiquewhite;
+}  
+  
+/* FOOTER AT THE BOTTOM */
+
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50px; 
+    font-size: 12px;
+    font-weight: bold;
+    color: #fff;   
+}
+
+#text-footer {
+    margin-left: 3%;    
+}
+
+@media  screen and (max-width: 600px) {
+
+    body {      
+        background-position: 50% 50% !important;       
+    }
+
+    .timer {
+        justify-content: center;    
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+
+    .navbar-brand {        
+        margin-left: 1%;
+        font-size: 3px;       
+    }
+
+    .row {
+        margin-bottom: 150px;
+    }
+          
+}

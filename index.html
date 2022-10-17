@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown timer</title>
+     <!-- Custom CSS   -->
+     <link rel="stylesheet" href="css\styles.css">	
+     <!-- Bootstrap 5   -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" 
+     integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+     <!-- fontawesome -->		
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" 
+     integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <!-- google fonts -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400&family=Montserrat:wght@100;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+      <!-- NAV BAR -->
+      <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand px-3" href="#">
+            <strong><i class="fa-solid fa-mountain-sun"></i> CHALLENGES DAILY UI :: 014 
+            </strong>
+        </a>
+    </nav>
+    <div class="container">             
+        <p id="small-text" class="text-center">NEXT <span class="light">ANNULAR SOLAR TOTAL</span></p>
+        <h1 id="main-title" class="text-center mb-3">ECLIPSE</h1> 
+            
+        <!-- ******************* COUNT DOWN CARDS ********************** -->	  
+        <div id="expired" class="row d-flex justify-content-center text-center">  
+            <!-- DAYS -->
+            <div class="timer col-sm-2">                
+                <h1 id="days" class="timer-title"></h1>
+                <h5>DAYS</h5>  
+            </div>	     
+            <!-- HOURS -->
+            <div class="timer col-sm-2">           
+                <h1 id="hours" class="timer-title"></h1>
+                <h5>HOURS</h5>   
+            </div>	
+            <!-- MINUTES -->
+            <div class="timer col-sm-2">
+                <h1 id="minutes" class="timer-title"></h1>
+                <h5>MINUTES</h5>  
+            </div>
+            <!-- SECONDS -->
+            <div class="timer col-sm-2">
+                 <h1 id="seconds" class="timer-title"></h1>
+                 <h5>SECONDS</h5>  
+            </div>
+                
+        </div>  <!-- end row --> 
+
+   </div> <!-- end container --> 
+
+    
+    <!-- FOOTER -->
+  <footer>
+    <p id="text-footer">Photo by Arnaud Mariat on Unsplash</p>
+  </footer>
+
+  <!-- COUNTDOWN SCRIPT -->
+  <script>
+    // Deadline date
+    var deadline = new Date("Oct 14, 2023 20:59:59").getTime();
+    var x = setInterval(function() {
+     // Date now  
+    var now = new Date().getTime();
+    // Time left to deadline
+    var t = deadline - now;
+    // Convert to days, hours, minutes and seconds
+    var days = Math.floor(t / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((t%(1000 * 60 * 60 * 24))/(1000 * 60 * 60));
+    var minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((t % (1000 * 60)) / 1000);
+    
+    document.getElementById("days").innerHTML = days;
+    document.getElementById("hours").innerHTML = hours;
+    document.getElementById("minutes").innerHTML = minutes;
+    document.getElementById("seconds").innerHTML = seconds;
+
+        if (t < 0) {
+            clearInterval(x);
+            document.getElementById("expired").innerHTML = "COUNTDOWN EXPIRED";
+        }
+    }, 1000);
+</script>
+
+</body>
+</html>
